@@ -34,7 +34,7 @@ import Header from '../components/Header.astro';
 
 <style>
 	:root {
-		--name-gradient: linear-gradient(0deg, #a2b0b1,#76bdab, #71ffd5);
+		--name-gradient: linear-gradient(0deg, #374242,#639184, #70f8cf);
 	}
 
 	main {
@@ -59,6 +59,16 @@ import Header from '../components/Header.astro';
 		background-position-y: 100%;
 		border-radius: 0.4rem;
 		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
 	}
 
 </style>
