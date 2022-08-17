@@ -5,14 +5,16 @@ import Header from '../components/Header.astro';
 
 <Layout title="Jobzi's portafolio builded with Astro.">
 	<Header />
-	<main class="place-content-center">
-		<section>
-			<div class="text-lg text-yellow-100">Hola, mi nombre es</div>
-			<div class="text-7xl text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-300">Jipson Murillo</div>
+	<main>
+		<section class="grid place-items-center h-screen">
+			<div class="text-lg text-yellow-400">Hola, soy</div>
+			<div class="text-7xl text-gradient">Jipson Murillo</div>
 			<div class="text-lg text-stone-400">Tengo una aficion por aprender constantemente</div>
 		</section>
+	</main>
+	<main>
 		<section>
-			<h2 class="text-white">About me</h2>
+			<h2 class="text-white">About</h2>
 			<div class="flex flex-row">
 				<p class="text-white">
 					¡Hola!, Soy Jipson Murillo desarrollador de Software del ombligo del mundo Ecuador. 
@@ -24,7 +26,7 @@ import Header from '../components/Header.astro';
 					un país tan pequeño y el desarrollo de software no tan demandado me pareció una skill que al dia 
 					de hoy es muy importante saber y que todas las personas deberian aprender a programar.
 				</p>
-				<img class="w-52 h-52 object-fill rounded-lg drop-shadow-xl" src="./public/me.png" alt="its me">
+				<img class="w-52 h-52 object-fill rounded-lg drop-shadow-xl" src="/me.png" alt="its me">
 			</div>
 		</section>
 	</main>
@@ -32,11 +34,7 @@ import Header from '../components/Header.astro';
 
 <style>
 	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
-	h1 {
-		margin: 2rem 0;
+		--name-gradient: linear-gradient(0deg, #a2b0b1,#76bdab, #71ffd5);
 	}
 
 	main {
@@ -46,17 +44,15 @@ import Header from '../components/Header.astro';
 		height: 100vh;
 	}
 
-	.grid-center {
+	section {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		grid-gap: 1em;
-		justify-items: center;
-		align-items: center;
+		justify-content: center;
+ 		align-content: center;
 	}
 
 	.text-gradient {
 		font-weight: 900;
-		background-image: var(--astro-gradient);
+		background-image: var(--name-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 100% 200%;
@@ -65,36 +61,4 @@ import Header from '../components/Header.astro';
 		animation: pulse 4s ease-in-out infinite;
 	}
 
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
 </style>
